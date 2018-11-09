@@ -14,3 +14,32 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/routetest', function () {
+	echo "POST";
+	echo "&nbsp";
+	echo "<a href='/'>X</a>";
+});
+
+Route::put('/routetest', function () {
+	echo "PUT";
+	echo "&nbsp";
+	echo "<a href='/'>X</a>";
+});
+
+Route::delete('/routetest', function () {
+	echo "DELETE";
+	echo "&nbsp";
+	echo "<a href='/'>X</a>";
+});
+
+Route::get('/dbtest/{id}', 'TestController@dbtest');
+Route::get('/dbtest2/{id}', 'TestController@dbtest2');
+
+Route::get('blade', function () {
+    return view('child');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
